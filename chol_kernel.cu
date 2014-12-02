@@ -119,9 +119,12 @@ __global__ void chol_kernel_cudaUFMG_elimination(float * U, int k) {
     int iM = i * MATRIX_SIZE;
     int ki = kM + i;
     
+    // Fabricio... dá para otimizar tirando U[ki] pra fora do loop... o que acha?
+    // Mas nao funciona! Ahh math!    
+    
     //Do work for this i iteration
     //Want to stride across
-    for (int j=jstart; j<MATRIX_SIZE; j+=jstep) {
+    for (int j=jstart; j<MATRIX_SIZE; j+=jstep) {        
         U[iM + j] -= U[ki] * U[kM + j];
     }
 }

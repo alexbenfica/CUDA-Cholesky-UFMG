@@ -77,7 +77,7 @@ Matrix create_positive_definite_matrix(unsigned int num_rows, unsigned int num_c
     M.elements = (float *) malloc(size * sizeof (float));
 
     // Step 1: Create a matrix with random numbers between [-.5 and .5]
-    printf("Creating a %d x %d matrix with random numbers between [-.5, .5]...", num_rows, num_columns);
+    printf("\nCreating a %d x %d matrix with random numbers between [-.5, .5]...", num_rows, num_columns);
     unsigned int i;
     unsigned int j;
     for (i = 0; i < size; i++)
